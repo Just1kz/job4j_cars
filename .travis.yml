@@ -16,8 +16,8 @@ notifications:
   email:
     recipients:
       -exelent.pride@rambler.ru
-    on_success: never # default: change
-    on_failure: always # defa,ult: always
+    on_success: never # default: always
+    on_failure: always # default: always
 
 env:
       global:
