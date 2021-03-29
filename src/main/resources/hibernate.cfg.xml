@@ -15,7 +15,13 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="format_sql">true</property>
         <property name="use_sql_comments">true</property>
-<!--        <property name="hibernate.jdbc.time_zone">Asia/Novosibirsk</property>-->
+
+        <mapping class="ru.job4j.cars.model.User" />
+        <mapping class="ru.job4j.cars.model.Mark" />
+        <mapping class="ru.job4j.cars.model.Model" />
+        <mapping class="ru.job4j.cars.model.TypeBody" />
+        <mapping class="ru.job4j.cars.model.Photo" />
+        <mapping class="ru.job4j.cars.model.Item" />
 
     </session-factory>
 </hibernate-configuration>
