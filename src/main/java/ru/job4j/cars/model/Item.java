@@ -1,6 +1,7 @@
 package ru.job4j.cars.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -41,6 +42,10 @@ public class Item {
 
     @JoinColumn(name = "sold")
     private boolean sold = false;
+
+    @Column(name = "created")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
     public int getId() {
         return id;
@@ -122,6 +127,14 @@ public class Item {
         this.sold = sold;
     }
 
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -171,6 +184,8 @@ public class Item {
                 + user
                 + ", sold="
                 + sold
+                + ", created="
+                + created
                 + '}';
     }
 }

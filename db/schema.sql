@@ -33,9 +33,10 @@ create table if not exists item(
     transmission text,
     drive text,
     typeBody_id int not null references typeBody(id),
-    photo_id int not null references photo(id),
+    photo_id int references photo(id) default null,
     description text,
     users_id int not null references users(id),
-    sold boolean default false
+    sold boolean default false,
+    created timestamp default now()
 );
 
