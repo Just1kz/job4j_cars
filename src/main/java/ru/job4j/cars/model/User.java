@@ -32,6 +32,13 @@ public class User {
         return user;
     }
 
+    public static User of(String email, String password) {
+        User user = new User();
+        user.email = email;
+        user.password = password;
+        return user;
+    }
+
     public int getId() {
         return id;
     }

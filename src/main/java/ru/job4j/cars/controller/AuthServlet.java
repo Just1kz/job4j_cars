@@ -21,15 +21,15 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-//        User user = new User(email, password);
-//        User user2 = Hbm.instOf().findByEmailAndPasswordUser(user);
-//        if (user2 != null && user2.getPassword().equals(password)) {
-//            HttpSession sc = req.getSession();
-//            sc.setAttribute("user", user2);
-//            resp.sendRedirect(req.getContextPath() + "/index.jsp");
-//        } else {
-//            req.setAttribute("error", "Не верный email или password");
-//            req.getRequestDispatcher("login.jsp").forward(req, resp);
-//        }
+        User user = User.of(email, password);
+        User user2 = Hbm.instOf().findByEmailAndPasswordUser(user);
+        if (user2 != null && user2.getPassword().equals(password)) {
+            HttpSession sc = req.getSession();
+            sc.setAttribute("user", user2);
+            resp.sendRedirect(req.getContextPath() + "/index.jsp");
+        } else {
+            req.setAttribute("error", "Не верный email или password");
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+        }
     }
 }

@@ -15,15 +15,16 @@ public class RegServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
+        String phone = req.getParameter("phone");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-//        User user = new User(name, email, password);
-//        if (Hbm.instOf().findByEmailAndPasswordUser(user) != null) {
-//            req.setAttribute("error", "Пользователь с указанным email уже зарегистрирован");
-//            req.getRequestDispatcher("/reg.jsp").forward(req, resp);
-//        } else {
-//            Hbm.instOf().createUser(user);
-//            resp.sendRedirect(req.getContextPath() + "/login.jsp");
-//        }
+        User user = User.of(name, phone, email, password);
+        if (Hbm.instOf().findByEmailAndPhoneUser(user) != null) {
+            req.setAttribute("error", "Пользователь с указанным email/phone уже зарегистрирован");
+            req.getRequestDispatcher("/reg.jsp").forward(req, resp);
+        } else {
+            Hbm.instOf().createUser(user);
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+        }
     }
 }

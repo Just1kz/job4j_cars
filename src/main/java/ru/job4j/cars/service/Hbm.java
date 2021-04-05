@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.job4j.cars.model.Item;
 import ru.job4j.cars.model.Mark;
+import ru.job4j.cars.model.User;
 
 import java.util.Collection;
 import java.util.function.Function;
@@ -69,6 +70,31 @@ public class Hbm implements Repository, AutoCloseable {
                         + "order by c.id")
                 .setParameter("MarkName", mark.getName())
                 .list());
+    }
+
+    @Override
+    public void createUser(User user) {
+        this.tx(session -> session.save(user));
+    }
+
+    @Override
+    public User findByEmailAndPhoneUser(User user) {
+        return (User) this.tx(session -> session.createQuery("FROM User where "
+                + "email = :email and "
+                + "phone = :phone")
+                .setParameter("email", user.getEmail())
+                .setParameter("phone", user.getPhone())
+                .uniqueResult());
+    }
+
+    @Override
+    public User findByEmailAndPasswordUser(User user) {
+        return (User) this.tx(session -> session.createQuery("FROM User where "
+                + "email = :email and "
+                + "password = :password")
+                .setParameter("email", user.getEmail())
+                .setParameter("password", user.getPassword())
+                .uniqueResult());
     }
 
     @Override

@@ -76,6 +76,10 @@
                         <input type="text" class="form-control" name="name" id="name" placeholder="Введите Имя">
                     </div>
                     <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Введите Телефон">
+                    </div>
+                    <div class="form-group">
                         <label>Почта</label>
                         <input type="text" class="form-control" name="email" id="eml" placeholder="Введите Почту">
                     </div>
@@ -96,7 +100,7 @@
     function validate() {
         let result = true;
         let answer = '';
-        let elements = [$("#name"), $("#eml"), $("#psw")];
+        let elements = [$("#name"), $("#eml"), $("#psw"), $("#phone")];
         for (let i = 0; i < elements.length; i++) {
             if (elements[i].val() === '') {
                 answer += elements[i].attr("placeholder") + "\n";

@@ -85,17 +85,6 @@
 
 <script>
 
-    function login() {
-        if (validate()) {
-            $.ajax({
-                method: "POST",
-                url: "./auth",
-                data: {email : $("#eml").val(), password : $("#psw").val()},
-                dataType: 'json'
-            });
-        }
-    }
-
     function validate() {
         let result = true;
         let answer = '';
