@@ -45,7 +45,29 @@ public class Item {
 
     @Column(name = "created")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date created;
+    private Date created = new Date(System.currentTimeMillis());;
+
+    public static Item of(
+            Mark mark,
+            Model model,
+            String transmission,
+            String drive,
+            TypeBody typeBody,
+            Photo photo,
+            String description,
+            User user
+    ) {
+        Item item = new Item();
+        item.mark = mark;
+        item.model = model;
+        item.transmission = transmission;
+        item.drive = drive;
+        item.typeBody = typeBody;
+        item.photo = photo;
+        item.description = description;
+        item.user = user;
+        return item;
+    }
 
     public int getId() {
         return id;

@@ -1,6 +1,8 @@
 package ru.job4j.cars.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +14,9 @@ public class Model {
 
     @JoinColumn(name = "name")
     private String name;
+
+//    @OneToMany(mappedBy = "model")
+//    private List<Item> items = new ArrayList<>();
 
     public static Model of(String name) {
         Model model = new Model();
@@ -34,6 +39,14 @@ public class Model {
     public void setName(String name) {
         this.name = name;
     }
+
+//    public List<Item> getItems() {
+//        return items;
+//    }
+//
+//    public void setItems(List<Item> items) {
+//        this.items = items;
+//    }
 
     @Override
     public boolean equals(Object o) {

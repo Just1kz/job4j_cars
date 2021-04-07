@@ -11,7 +11,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
 
-    <title>Hello, Task-table!</title>
+    <title>Hello, Trade-cars!</title>
 </head>
 <body>
 <!-- Optional JavaScript -->

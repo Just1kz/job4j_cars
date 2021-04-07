@@ -26,4 +26,102 @@
     <url-pattern>/reg</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>MarkServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.MarkServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MarkServlet</servlet-name>
+    <url-pattern>/marks</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ModelServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.ModelServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModelServlet</servlet-name>
+    <url-pattern>/models</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TypeBodyServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.TypeBodyServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TypeBodyServlet</servlet-name>
+    <url-pattern>/typeBody</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BaseFiltersServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.BaseFiltersServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BaseFiltersServlet</servlet-name>
+    <url-pattern>/baseFilters</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AllItemsServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.AllItemsServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllItemsServlet</servlet-name>
+    <url-pattern>/allItem</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MarksFilterServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.MarksFilterServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MarksFilterServlet</servlet-name>
+    <url-pattern>/markFilters</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddItemServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.AddItemServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddItemServlet</servlet-name>
+    <url-pattern>/addItem</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SoldItemServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.controller.SoldItemServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SoldItemServlet</servlet-name>
+    <url-pattern>/sold</url-pattern>
+  </servlet-mapping>
+
 </web-app>

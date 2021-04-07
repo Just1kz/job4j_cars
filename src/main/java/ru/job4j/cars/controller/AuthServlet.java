@@ -26,10 +26,10 @@ public class AuthServlet extends HttpServlet {
         if (user2 != null && user2.getPassword().equals(password)) {
             HttpSession sc = req.getSession();
             sc.setAttribute("user", user2);
-            resp.sendRedirect(req.getContextPath() + "/index.jsp");
+            resp.sendRedirect(req.getContextPath() + "/allItem");
         } else {
             req.setAttribute("error", "Не верный email или password");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
         }
     }
 }
