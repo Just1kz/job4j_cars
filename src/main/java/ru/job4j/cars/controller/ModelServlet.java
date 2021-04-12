@@ -2,7 +2,7 @@ package ru.job4j.cars.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.job4j.cars.model.Model;
-import ru.job4j.cars.service.Hbm;
+import ru.job4j.cars.repository.Hbm;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

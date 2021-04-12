@@ -1,7 +1,7 @@
 package ru.job4j.cars.controller;
 
 import ru.job4j.cars.model.User;
-import ru.job4j.cars.service.Hbm;
+import ru.job4j.cars.repository.Hbm;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +19,7 @@ public class RegServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         User user = User.of(name, phone, email, password);
-        if (Hbm.instOf().findByEmailAndPhoneUser(user) != null) {
+        if (Hbm.instOf().findByEmailAndPhoneUser(user.getEmail(), user.getPhone()) != null) {
             req.setAttribute("error", "Пользователь с указанным email/phone уже зарегистрирован");
             req.getRequestDispatcher("/reg.jsp").forward(req, resp);
         } else {

@@ -1,4 +1,4 @@
-package ru.job4j.cars.service;
+package ru.job4j.cars.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -122,22 +122,22 @@ public class Hbm implements Repository, AutoCloseable {
     }
 
     @Override
-    public User findByEmailAndPhoneUser(User user) {
+    public User findByEmailAndPhoneUser(String email, String phone) {
         return (User) this.tx(session -> session.createQuery("FROM User where "
                 + "email = :email and "
                 + "phone = :phone")
-                .setParameter("email", user.getEmail())
-                .setParameter("phone", user.getPhone())
+                .setParameter("email", email)
+                .setParameter("phone", phone)
                 .uniqueResult());
     }
 
     @Override
-    public User findByEmailAndPasswordUser(User user) {
+    public User findByEmailAndPasswordUser(String email, String password) {
         return (User) this.tx(session -> session.createQuery("FROM User where "
                 + "email = :email and "
                 + "password = :password")
-                .setParameter("email", user.getEmail())
-                .setParameter("password", user.getPassword())
+                .setParameter("email", email)
+                .setParameter("password", password)
                 .uniqueResult());
     }
 

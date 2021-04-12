@@ -1,7 +1,7 @@
 package ru.job4j.cars.controller;
 
 import ru.job4j.cars.model.*;
-import ru.job4j.cars.service.Hbm;
+import ru.job4j.cars.repository.Hbm;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +21,8 @@ public class AddItemServlet extends HttpServlet {
         String descriptionReq = req.getParameter("description");
         String photoNameReq = (String) req.getSession().getAttribute("photo_name");
 
-        if (photoNameReq.equals("")) {
+        if (photoNameReq == null
+                || photoNameReq.isEmpty()) {
             photoNameReq = "nullPhoto.jpg";
         }
 

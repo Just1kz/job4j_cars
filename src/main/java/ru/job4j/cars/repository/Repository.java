@@ -1,4 +1,4 @@
-package ru.job4j.cars.service;
+package ru.job4j.cars.repository;
 
 import ru.job4j.cars.model.*;
 
@@ -28,9 +28,9 @@ public interface Repository {
 
     public void createUser(User user);
 
-    public User findByEmailAndPhoneUser(User user);
+    public User findByEmailAndPhoneUser(String email, String phone);
 
-    public User findByEmailAndPasswordUser(User user);
+    public User findByEmailAndPasswordUser(String email, String password);
 
     public Photo createPhoto(Photo photo);
 

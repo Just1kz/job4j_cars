@@ -3,7 +3,7 @@ package ru.job4j.cars.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.job4j.cars.model.User;
-import ru.job4j.cars.service.Hbm;
+import ru.job4j.cars.repository.Hbm;
 
 
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class AuthServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         User user = User.of(email, password);
-        User user2 = Hbm.instOf().findByEmailAndPasswordUser(user);
+        User user2 = Hbm.instOf().findByEmailAndPasswordUser(user.getEmail(), user.getPassword());
         if (user2 != null && user2.getPassword().equals(password)) {
             HttpSession sc = req.getSession();
             sc.setAttribute("user", user2);
